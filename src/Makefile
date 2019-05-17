@@ -84,10 +84,10 @@ install: include libs
 
 include:
 	@echo "Copy header files to ${INCLUDEDIR}" 
-	@for i in $(INCLUDEFILES); do \
-	echo ${CP} -r $$i ${INCLUDEDIR}; \
-	${CP} -r $$i ${INCLUDEDIR}; \
-	done
+	@echo "${CP} -r include ${INCLUDEDIR}"
+	${CP} -r include ${INCLUDEDIR}
+	${CP} -r cips.h ${INCLUDEDIR}
+	${CP} -r app_options/application_options.h $(INCLUDEDIR)
 
 clean:
 	@echo "Cleaning up..."

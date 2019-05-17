@@ -5,9 +5,11 @@ OPTION psf_version = 2.1;
 
 BEGIN LIBRARY cips
 
-  OPTION drc = cips_drc;
-  OPTION copyfiles = all;
-  OPTION desc = "Compact TCP/IP Stack library v1.00.a";
+  OPTION DRC = cips_drc;
+  OPTION COPYFILES = all;
+  OPTION DESC = "Compact TCP/IP Stack library v1.00.a";
+  OPTION VERSION = 1.2;
+  OPTION NAME = libcips;
   
   BEGIN CATEGORY debug
       PROPERTY desc = "Debug";
