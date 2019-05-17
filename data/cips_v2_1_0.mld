@@ -1,0 +1,34 @@
+# $Id: cips_v2_1_0.mld,v 1.2 2010/07/08 17:35:12 jdavid Exp $
+
+
+OPTION psf_version = 2.1;
+
+BEGIN LIBRARY cips
+
+  OPTION drc = cips_drc;
+  OPTION copyfiles = all;
+  OPTION desc = "Compact TCP/IP Stack library v1.00.a";
+  
+  BEGIN CATEGORY debug
+      PROPERTY desc = "Debug";
+      PARAM name = debug_flag, desc = "Turn on Debug ?", type = bool, default = false;
+  END CATEGORY
+
+  BEGIN CATEGORY arp_options
+    PROPERTY desc = "ARP Options";
+      PARAM name = arp_options, desc = "ARP Options", type = bool, default = true, permit = none;
+      PARAM name = arp_table_size, desc = "Max nb of hardware address IP address pairs cached", type = int, default = 10;    
+  END CATEGORY
+
+  BEGIN CATEGORY Network Adapater
+      PROPERTY DESC = "Network Adapter Options";
+      PARAM name = network_adapter_options, desc = "Network Adapter Options", type = bool, default = true, permit = none;
+      PARAM name = network_mtu, desc = "Ethernet frame length in bytes (MTU)", type = int, default = 1518;
+      PARAM name = recv_buf_size, desc ="Max nb of incoming ethernet frames stored", type = int, default = 10;
+      PARAM name = max_tcp_seg, desc = "Max nb of outgoing segments per TCP controller", type = int, default = 10;
+      PARAM name = max_tcp, desc = "Max nb of TCP controllers", type = int, default = 20;
+      PARAM name = max_udp, desc = "Max nb of UDP controllers", type = int, default = 5;
+      PARAM name = max_net_adapter, desc = "Max nb of network adapaters", type = int, default = 1;
+  END CATEGORY
+ 
+END LIBRARY
