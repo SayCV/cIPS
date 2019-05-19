@@ -3,11 +3,12 @@
 
 OPTION psf_version = 2.1;
 
-BEGIN LIBRARY cips
+BEGIN LIBRARY libcips
 
   OPTION DRC = cips_drc;
   OPTION COPYFILES = all;
   OPTION DESC = "Compact TCP/IP Stack library v1.00.a";
+  OPTION app_linker_flags = "-Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group";
   OPTION VERSION = 1.2;
   OPTION NAME = libcips;
   
